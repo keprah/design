@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Ilya Andreev — страницы кейсов
+   Источник: Case_1440.png (шаблон кейса, ширина 1440).
+   Работает поверх styles.css (шапка, кнопки, карточки, About, футер).
+   Геометрия из шаблона: колонки 240 (навигация) + зазор 40 + 624 (контент), слайд 700 (шире колонки), зазор между слайдами 40.
+   Шрифты и размеры — по новому макету главной (Home_1440): Geist + Playfair Display,
+   шкала 14 · 15 · 17 · 19 · 21 · 25 · 48 · 74 (см. токены --fs-* в styles.css):
+   h1 74 (Playfair) / h2 25 (500) / текст 17·24 / подписи 17 (серые) / мета 14.
+   ========================================================================== */
+
+.case-page{
+  --case-w:min(var(--page-max),calc(100% - var(--pad)*2));  /* контейнер 1184 */
+  --hero-w:min(1264px,calc(100% - var(--pad)*2));           /* hero шире контейнера на 40 с каждой стороны */
+  --nav-w:240px;
+  --nav-gap:40px;     /* отступ меню → контент */
+  --main-w:624px;     /* колонка текста */
+  --slide-w:700px;    /* слайд шире колонки, как в макете */
+  --slide-gap:40px;
+  --grey:#808080;
+  --hatch:repeating-linear-gradient(135deg,#fff 0,#fff 1.414px,#f6f6f6 1.414px,#f6f6f6 2.664px,#fff 2.664px,#fff 3.5355px);
+}
+.case-page main{overflow-x:clip}
+
+/* ---------- Head: title + lead ---------- */
+.case-head{width:var(--case-w);margin:0 auto;padding-top:93px}
+.case-title{font-family:var(--ff-display);font-weight:400;font-size:var(--fs-h1);line-height:1.081;letter-spacing:-.02em;text-wrap:balance}  /* 74 × 1.081 = 80: высота строки как в шаблоне, чтобы не сдвигать всё ниже */
+.case-lead{margin-top:18px;max-width:640px;font-size:var(--fs-text);line-height:24px;letter-spacing:.015em;color:#000}
+
+/* ---------- Hero ---------- */
+.case-hero{width:var(--hero-w);margin:41px auto 0}
+.case-hero__frame{position:relative;aspect-ratio:1264/633;background:var(--hatch);overflow:hidden}
+.case-hero__frame img{width:100%;height:100%;object-fit:contain;object-position:center}
+.case-hero figcaption{margin:12px 0 0;padding-inline:calc((100% - var(--case-w))/2);font-size:var(--fs-text);line-height:24px;letter-spacing:.015em;font-weight:400;color:var(--grey)}
+
+/* ---------- Body grid: nav + content ---------- */
+.case-body{width:var(--case-w);margin:120px auto 0;display:grid;grid-template-columns:var(--nav-w) minmax(0,var(--main-w));column-gap:var(--nav-gap);align-items:start}
+.case-nav{position:sticky;top:32px;padding-top:9px}
+.case-nav ul{display:flex;flex-direction:column;gap:17px;padding-right:24px}
+.case-nav a{position:relative;display:block;padding-left:28px;font-size:var(--fs-text);line-height:24px;letter-spacing:.016em;font-weight:500;color:#000;transition:opacity .15s}
+.case-nav a::before{content:"";position:absolute;left:10px;top:8px;width:8px;height:8px;border-radius:50%;background:#d9d9d9;transition:background .15s}
+.case-nav a:hover::before,.case-nav a.is-active::before{background:#000}
+
+.case-content{min-width:0}
+.sec{scroll-margin-top:32px}
+.sec+.sec{margin-top:39px}
+.sec__h{font-size:var(--fs-h3);line-height:32px;font-weight:500;color:#000}
+.sec__h+*{margin-top:16px}
+.sec p,.sec li{font-size:var(--fs-text);line-height:24px;letter-spacing:.015em;font-weight:400;color:#333}
+.sec p+p{margin-top:12px}
+.sec p+ul,.sec ul+p,.sec ul+ul{margin-top:12px}
+.sec ul>li{position:relative;padding-left:20px}
+.sec ul>li+li{margin-top:8px}
+.sec ul>li::before{content:"";position:absolute;left:4px;top:10px;width:5px;height:5px;border-radius:50%;background:#b8b8b8}
+
+/* project facts + NDA (первый блок колонки) */
+.facts{margin:0 0 40px;border-top:1px solid var(--line)}
+.facts__row{display:grid;grid-template-columns:132px minmax(0,1fr);column-gap:24px;padding:13px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:var(--fs-meta);line-height:24px;letter-spacing:.013em;font-weight:400;color:var(--grey)}
+.facts dd{margin:0;font-size:var(--fs-text);line-height:24px;letter-spacing:.015em;color:#333}
+.facts a{color:#000;border-bottom:1px solid #c9c9c9;transition:border-color .15s}
+.facts a:hover{border-color:#000}
+.note{margin:-16px 0 40px;font-size:var(--fs-meta);line-height:20px;letter-spacing:.013em;color:var(--grey)}
+.note strong{font-weight:500;color:#595959;margin-right:6px}
+
+/* до / после */
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:16px}
+.ba h3{font-size:var(--fs-text);line-height:24px;letter-spacing:.016em;font-weight:500;color:#000;margin-bottom:12px}
+.ba div:first-child h3{color:var(--grey)}
+.sec .ba+p{margin-top:16px}
+
+/* ---------- Figure / slider ---------- */
+.fig{margin-top:31px;padding-bottom:17px}
+.sec__h+.fig,.sec__h+.slider{margin-top:16px}
+.fig__frame,.slide__frame{position:relative;aspect-ratio:var(--ar,3/2);border-radius:4px;overflow:hidden;background:var(--hatch)}
+.fig__frame img,.slide__frame img{width:100%;height:100%;object-fit:contain;display:block}
+.fig figcaption,.slide figcaption{margin-top:14px;font-size:var(--fs-text);line-height:24px;letter-spacing:.015em;font-weight:400;color:var(--grey)}
+
+.slider{--col-left:calc((100vw - var(--case-w))/2 + var(--nav-w) + var(--nav-gap));margin-top:31px;padding-bottom:17px;margin-right:calc(var(--main-w) - (100vw - var(--col-left)))}
+.slider__track{display:flex;gap:var(--slide-gap);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slider__track::-webkit-scrollbar{display:none}
+.slider__track::after{content:"";flex:0 0 max(0px,calc(100vw - var(--col-left) - var(--slide-w)));margin-left:calc(-1 * var(--slide-gap))} /* хвост: последний слайд может встать к левому краю */
+.slide{flex:0 0 var(--slide-w);width:var(--slide-w);scroll-snap-align:start}
+.slider__ctrl{display:flex;align-items:center;justify-content:space-between;width:var(--main-w);margin-top:12px}
+.slider__bars{display:flex;align-items:center;gap:4px}
+.slider__bars button{display:block;width:9px;height:4px;padding:0;border-radius:2px;background:#ccc;transition:width .2s,background .2s}
+.slider__bars button[aria-current="true"]{width:32px;background:#000}
+.slider__arrows{display:flex;gap:8px}
+.arrow{width:48px;height:48px;display:grid;place-items:center;border-radius:4px;background:#f9f9f9;color:#000;transition:background .15s,color .15s}
+.arrow:hover:not(:disabled){background:#f0f0f0}
+.arrow:disabled{color:#c7c7c7;cursor:default}
+.arrow svg{width:24px;height:24px}
+
+/* ---------- Other cases ---------- */
+.more{margin-top:calc(var(--gap-xl) - 1px);text-align:center}
+.more__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:min(624px,calc(100% - var(--pad)*2));margin:16px auto 0;text-align:left}
+.more__grid li{display:flex}
+
+/* About: на 2px ниже, чем на главной (по шаблону кейса) */
+.case-page .about{margin-top:calc(var(--gap-about) + 4px)}
+
+/* gray icons in About (по шаблону кейса) */
+.case-page .about__loc svg,.case-page .about .mail svg{color:var(--grey)}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width:1100px){
+  .case-page{--nav-w:200px}
+}
+
+/* планшет: навигация превращается в горизонтальную ленту, слайдер без «хвоста» */
+@media (max-width:959px){
+  .case-head{padding-top:72px}
+  .case-hero{margin-top:40px}
+  .case-body{display:block;margin-top:64px}
+  .sec+.sec{margin-top:56px}
+  .case-nav{position:sticky;top:0;z-index:5;margin:0 calc(var(--pad) * -1) 32px;padding:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .case-nav ul{flex-direction:row;gap:0;padding:0 var(--pad);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .case-nav ul::-webkit-scrollbar{display:none}
+  .case-nav li{flex:none}
+  .case-nav a{padding:14px 18px 14px 18px;font-size:var(--fs-meta);white-space:nowrap}
+  .case-nav a::before{display:none}
+  .case-nav a.is-active{box-shadow:inset 0 -2px 0 #000}
+  .case-content{max-width:700px;margin-inline:auto}
+  .case-page{--slide-w:min(700px,calc(100vw - var(--pad)*2 - 28px))}
+  .slider{--col-left:max(var(--pad),calc((100vw - 700px)/2));margin-right:calc(-1 * (100vw - 100% - var(--col-left)))}
+  .slider__ctrl{width:100%}
+  .slide{flex-basis:var(--slide-w);width:var(--slide-w)}
+  .more__grid{width:min(560px,calc(100% - var(--pad)*2))}
+}
+
+@media (max-width:760px){
+  .case-hero__frame{aspect-ratio:var(--ar,1264/634)}
+  .case-hero__frame img{object-fit:cover}
+  .case-head{padding-top:56px}
+  .case-lead{max-width:none}
+  .more__grid{grid-template-columns:minmax(0,1fr)}
+  .facts__row{grid-template-columns:96px minmax(0,1fr);column-gap:16px}
+  .ba{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+
+@media (max-width:480px){
+  .case-page{--slide-gap:16px}
+  .sec+.sec{margin-top:48px}
+  .sec__h{font-size:var(--fs-title);line-height:28px}
+  .arrow{width:44px;height:44px}
+  .facts__row{grid-template-columns:minmax(0,1fr);row-gap:2px;padding:12px 0}
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Финансовый дашборд для девелопера · Илья Андреев</title>
+<meta name="description" content="Спроектировал внутренний сервис финансового мониторинга для девелоперского проекта: плановые и фактические показатели, периоды, фильтры и версии данных в единой интерфейсной логике.">
+<link rel="preload" href="../../fonts/geist-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/playfair-display-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../case.css">
+<script src="../../site.js"></script>
+<script src="../../case.js"></script>
+</head>
+<body class="case-page">
+
+<header class="header">
+  <div class="header__in">
+    <a class="brand" href="../index.html" aria-label="Илья Андреев — на главную">
+      <span class="avatar" aria-hidden="true">IA<i class="avatar__dot"></i></span>
+      <span class="brand__name">Илья Андреев</span>
+    </a>
+    <div class="header__actions">
+      <a class="btn" href="#contacts" data-contact>Связаться</a>
+      <div class="langmenu">
+        <button class="flag" type="button" aria-label="Язык: русский" aria-haspopup="true" aria-expanded="false" aria-controls="langpop"><img src="../../assets/flag-ru.png" width="20" height="20" alt=""></button>
+        <div class="langpop" id="langpop" hidden>
+          <a href="../../cases/financial-dashboard.html" lang="en" hreflang="en"><img src="../../assets/flag-gb.png" width="20" height="20" alt="">English</a>
+          <a href="../../ru/cases/financial-dashboard.html" lang="ru" hreflang="ru" aria-current="true"><img src="../../assets/flag-ru.png" width="20" height="20" alt="">Русский</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <header class="case-head">
+    <h1 class="case-title">Финансовый дашборд</h1>
+    <p class="case-lead">Спроектировал внутренний сервис финансового мониторинга для девелоперского проекта: плановые и фактические показатели, периоды, фильтры и версии данных в единой интерфейсной логике.</p>
+  </header>
+
+  <figure class="case-hero" style="--ar:1500/877">
+    <div class="case-hero__frame"><img src="../../assets/cases/fin_main.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_main.webp" width="1500" height="877" alt="Дашборд мониторинга финансов: выручка, расходы, доля рекламных расходов и динамика по месяцам" fetchpriority="high"></div>
+    <figcaption>Дашборд мониторинга финансов: выручка, расходы, доля рекламных расходов и динамика по месяцам</figcaption>
+  </figure>
+
+  <div class="case-body">
+    <nav class="case-nav" aria-label="Разделы кейса"><ul><li><a href="#rezultat">Результат</a></li><li><a href="#o-proekte">О проекте</a></li><li><a href="#klyuchevaya-ux-zadacha-versii-plana">Ключевая UX-задача: версии плана</a></li><li><a href="#chto-bylo-vazhno">Что было важно</a></li><li><a href="#prototip">Прототип</a></li><li><a href="#hod-raboty">Ход работы</a></li></ul></nav>
+    <div class="case-content">
+      <dl class="facts"><div class="facts__row"><dt>Тип</dt><dd>Аналитика · Внутренний сервис</dd></div><div class="facts__row"><dt>Роль</dt><dd>UX/UI-проектирование: структура раздела, логика дашбордов и таблиц, интерактивные прототипы, передача в разработку</dd></div><div class="facts__row"><dt>Пользователи</dt><dd>Финансовые специалисты, руководители направлений, пользователи управленческой отчётности</dd></div><div class="facts__row"><dt>Формат работы</dt><dd>Интерактивные прототипы на встречах с клиентом и ссылки на внутреннее тестирование</dd></div></dl><p class="note"><strong>Ограничения публикации</strong>Из-за NDA в кейсе используются обезличенные описания и синтетические данные. Реальные названия, финансовые показатели, внутренние источники данных, макеты и детали клиентской логики не публикуются.</p>
+      <section class="sec" id="rezultat"><h2 class="sec__h">Результат</h2><ul><li>Упростил анализ финансовых метрик за счёт понятной структуры дашбордов, таблиц и сценариев сравнения.</li><li>Подготовил интерфейс, который подходит как для детальной аналитической работы, так и для демонстрации агрегированных результатов руководителям.</li></ul></section><section class="sec" id="o-proekte"><h2 class="sec__h">О проекте</h2><p>Я проектировал раздел финансового мониторинга внутри панели управления для девелоперского проекта. Сервис должен был помочь финансовой команде работать с большим объёмом показателей, сравнивать плановые и фактические значения, анализировать отклонения и быстро переключаться между разными срезами данных.</p><p>Главная задача интерфейса — сделать сложную финансовую отчётность понятной, управляемой и пригодной для регулярной работы.</p><figure class="fig" style="--ar:1500/877"><div class="fig__frame"><img src="../../assets/cases/fin_sales.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_sales.webp" width="1500" height="877" alt="Таблица продаж: план и факт по проектам, отклонения и конверсии" loading="lazy" decoding="async"></div><figcaption>Таблица продаж: план и факт по проектам, отклонения и конверсии</figcaption></figure></section><section class="sec" id="klyuchevaya-ux-zadacha-versii-plana"><h2 class="sec__h">Ключевая UX-задача: версии плана</h2><p>В финансовой отчётности плановые значения могут обновляться, пересчитываться и использоваться в разных сценариях анализа. При этом пользователю важно понимать, с какой версией плана он сейчас сравнивает факт, и быстро переключаться между вариантами.</p><p>Я проработал логику выбора версии, отображение активного состояния и сценарии сравнения, чтобы эта сложность оставалась управляемой для пользователя.</p><figure class="fig" style="--ar:1500/877"><div class="fig__frame"><img src="../../assets/cases/fin_plan.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_plan.webp" width="1500" height="877" alt="Табличный режим работы с плановыми показателями" loading="lazy" decoding="async"></div><figcaption>Табличный режим работы с плановыми показателями</figcaption></figure></section><section class="sec" id="chto-bylo-vazhno"><h2 class="sec__h">Что было важно</h2><ul><li>Разделить быстрый обзор и глубокий анализ.</li><li>Сделать структуру показателей понятной без перегрузки экрана.</li><li>Продумать фильтры, переключатели и состояния для разных сценариев сравнения.</li><li>Показать отклонения в удобной для анализа форме.</li><li>Сохранить единые паттерны взаимодействия между дашбордами и таблицами.</li><li>Подготовить интерфейс к работе с большим количеством данных.</li></ul><figure class="fig" style="--ar:1000/562"><div class="fig__frame"><img src="../../assets/cases/fin_anim.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_anim.webp" width="1000" height="562" alt="Интерактивный прототип: переключение срезов и сравнение показателей" loading="lazy" decoding="async"></div><figcaption>Интерактивный прототип: переключение срезов и сравнение показателей</figcaption></figure></section><section class="sec" id="prototip"><h2 class="sec__h">Прототип</h2><p>Все результаты работы на встречах с клиентом я демонстрировал в виде интерактивных прототипов и после презентаций отдавал ссылки на внутреннее тестирование командой и сотрудниками компании клиента.</p><div class="slider" data-slider style="--ar:1500/895" role="group" aria-roledescription="carousel" aria-label="Прототип"><div class="slider__track" tabindex="0"><figure class="slide"><div class="slide__frame"><img src="../../assets/cases/fin_proto.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_proto.webp" width="1500" height="895" alt="Схема прототипа: связи между экранами и состояниями" loading="lazy" decoding="async"></div><figcaption>Схема прототипа: связи между экранами и состояниями</figcaption></figure><figure class="slide"><div class="slide__frame"><img src="../../assets/cases/fin_wire.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_wire.webp" width="1500" height="382" alt="Ранние вайрфреймы структуры отчётов" loading="lazy" decoding="async"></div><figcaption>Ранние вайрфреймы структуры отчётов</figcaption></figure></div><div class="slider__ctrl"><div class="slider__bars"><button type="button" aria-label="Слайд 1" aria-current="true"></button><button type="button" aria-label="Слайд 2" aria-current="false"></button></div><div class="slider__arrows"><button class="arrow" type="button" data-prev aria-label="Предыдущий слайд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 5 8.5 12l7 7"/></svg></button><button class="arrow" type="button" data-next aria-label="Следующий слайд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 5l7 7-7 7"/></svg></button></div></div></div></section><section class="sec" id="hod-raboty"><h2 class="sec__h">Ход работы</h2><ul><li>Анализировал требования и сценарии работы с финансовой отчётностью.</li><li>Структурировал показатели, срезы, фильтры и варианты сравнения.</li><li>Проектировал логику дашбордов, таблиц и детальных представлений.</li><li>Прорабатывал сценарии выбора версии плановых данных.</li><li>Собирал интерактивные прототипы для проверки логики интерфейса.</li><li>Дорабатывал структуру экранов по результатам обсуждений с командой.</li><li>Готовил макеты и состояния интерфейса для передачи в разработку.</li></ul><figure class="fig" style="--ar:1500/723"><div class="fig__frame"><img src="../../assets/cases/fin_layout.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_layout.webp" width="1500" height="723" alt="Компоновка блоков дашборда" loading="lazy" decoding="async"></div><figcaption>Компоновка блоков дашборда</figcaption></figure></section>
+    </div>
+  </div>
+
+  <section class="more" aria-label="Другие кейсы"><h2 class="h2">Другие кейсы</h2><ul class="more__grid"><li><a class="card" href="design-system.html"><span class="card__media"><img src="../../assets/cases/ds_vars.webp" data-remote="https://keprah.github.io/portfolio/assets/img/ds_vars.webp" width="1500" height="828" alt="Переменные и компоненты дизайн-системы" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">Дизайн-система</span><span class="card__text">Перевод клиентских витрин SaaS-платформы доставки на компоненты и переменные.</span></span></a></li><li><a class="card" href="sales-crm.html"><span class="card__media"><img src="../../assets/cases/crm_pc.webp" data-remote="https://keprah.github.io/portfolio/assets/img/crm_pc.webp" width="1500" height="723" alt="Экраны CRM для отдела продаж" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">CRM для отдела продаж</span><span class="card__text">Внутренний сервис отдела продаж: от первого обращения до офферов и финансовых расчётов.</span></span></a></li></ul></section>
+
+  <!-- ============ About me ============ -->
+  <section class="about" id="contacts">
+    <h2 class="h2">Обо мне</h2>
+    <p class="about__loc">
+      <svg width="16" height="20" viewBox="0 0 16 20" aria-hidden="true"><path transform="translate(1 0) scale(.875 1)" fill="currentColor" d="M8 0C3.6 0 0 3.5 0 7.9c0 5.4 6.4 11.4 7.2 12 .5.4 1.1.4 1.6 0C9.6 19.3 16 13.3 16 7.9 16 3.5 12.4 0 8 0zm0 11a3.1 3.1 0 110-6.2A3.1 3.1 0 018 11z"/></svg>
+      Тбилиси, Грузия
+    </p>
+    <p class="about__text">Меня зовут Илья. Я продуктовый<br class="br-m"> дизайнер, специализируюсь<br class="br-t"> на<br class="br-m"> корпоративных<br class="br-d"> системах (B2E/B2B)<br class="br-m"> и занимаюсь UX-<br class="br-t">дизайном сложных<br class="br-m"> интерфейсов с большим объёмом<br class="br-d br-m"> данных,<br class="br-t"> фильтрами, формами<br class="br-m"> и ролевыми моделями — интерфейсов,<br class="br-t br-m"> которые помогают<br class="br-d"> сотрудникам<br class="br-m"> работать быстрее и<br class="br-t"> ошибаться реже.</p>
+
+    <h3 class="about__h3">Контакты</h3>
+    <a class="mail" href="mailto:lifespacezero@gmail.com">
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>
+      lifespacezero@gmail.com
+    </a>
+    <div class="links">
+      <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <span>© 2026</span>
+    <span class="lang"><a href="../../cases/financial-dashboard.html" lang="en" hreflang="en">EN</a> / <a href="../../ru/cases/financial-dashboard.html" lang="ru" hreflang="ru" aria-current="true">RU</a></span>
+  </div>
+</footer>
+
+<dialog class="modal" id="contact-modal" aria-labelledby="contact-title">
+  <button class="modal__close" type="button" data-modal-close aria-label="Закрыть"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M.75.75l12.5 12.5M13.25.75L.75 13.25"/></svg></button>
+  <h2 class="modal__title" id="contact-title">Контакты</h2>
+  <a class="mail" href="mailto:lifespacezero@gmail.com"><svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>lifespacezero@gmail.com</a>
+  <div class="links">
+    <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+  </div>
+  <a class="modal__cta" href="https://calendly.com/lifespacezero/30min" target="_blank" rel="noopener">Записаться на звонок</a>
+</dialog>
+
+</body>
+</html>

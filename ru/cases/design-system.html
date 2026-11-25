@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дизайн-система для SaaS-платформы доставки · Илья Андреев</title>
+<meta name="description" content="Перевёл клиентские витрины SaaS-платформы доставки на систему компонентов и переменных и перепроектировал checkout, сократив число шагов оформления заказа.">
+<link rel="preload" href="../../fonts/geist-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/playfair-display-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../case.css">
+<script src="../../site.js"></script>
+<script src="../../case.js"></script>
+</head>
+<body class="case-page">
+
+<header class="header">
+  <div class="header__in">
+    <a class="brand" href="../index.html" aria-label="Илья Андреев — на главную">
+      <span class="avatar" aria-hidden="true">IA<i class="avatar__dot"></i></span>
+      <span class="brand__name">Илья Андреев</span>
+    </a>
+    <div class="header__actions">
+      <a class="btn" href="#contacts" data-contact>Связаться</a>
+      <div class="langmenu">
+        <button class="flag" type="button" aria-label="Язык: русский" aria-haspopup="true" aria-expanded="false" aria-controls="langpop"><img src="../../assets/flag-ru.png" width="20" height="20" alt=""></button>
+        <div class="langpop" id="langpop" hidden>
+          <a href="../../cases/design-system.html" lang="en" hreflang="en"><img src="../../assets/flag-gb.png" width="20" height="20" alt="">English</a>
+          <a href="../../ru/cases/design-system.html" lang="ru" hreflang="ru" aria-current="true"><img src="../../assets/flag-ru.png" width="20" height="20" alt="">Русский</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <header class="case-head">
+    <h1 class="case-title">Дизайн-система</h1>
+    <p class="case-lead">Перевёл клиентские витрины SaaS-платформы доставки на систему компонентов и переменных и перепроектировал checkout, сократив число шагов оформления заказа.</p>
+  </header>
+
+  <figure class="case-hero" style="--ar:1500/828">
+    <div class="case-hero__frame"><img src="../../assets/cases/ds_vars.webp" data-remote="https://keprah.github.io/portfolio/assets/img/ds_vars.webp" width="1500" height="828" alt="Библиотека переменных: цвет, типографика, размеры, отступы и состояния элементов" fetchpriority="high"></div>
+    <figcaption>Библиотека переменных: цвет, типографика, размеры, отступы и состояния элементов</figcaption>
+  </figure>
+
+  <div class="case-body">
+    <nav class="case-nav" aria-label="Разделы кейса"><ul><li><a href="#rezultat">Результат</a></li><li><a href="#ishodnaya-situatsiya">Исходная ситуация</a></li><li><a href="#struktura-i-dizain-sistema">Структура и дизайн-система</a></li><li><a href="#peremennye-i-komponenty">Переменные и компоненты</a></li><li><a href="#logika-sistemy">Логика системы</a></li><li><a href="#pereproektirovanie-checkout">Перепроектирование checkout</a></li><li><a href="#effekt">Эффект</a></li></ul></nav>
+    <div class="case-content">
+      <dl class="facts"><div class="facts__row"><dt>Тип</dt><dd>Дизайн-система · SaaS</dd></div><div class="facts__row"><dt>Роль</dt><dd>UX/UI-проектирование и систематизация дизайн-инфраструктуры: структура файлов, компоненты, переменные, клиентская кастомизация, сценарии checkout</dd></div><div class="facts__row"><dt>Продукт</dt><dd>SaaS для запуска доставки из ресторанов: каталог, оформление заказа, личный кабинет</dd></div><div class="facts__row"><dt>Зоны продукта</dt><dd>Каталог и листинг · Оформление заказа · Личный кабинет</dd></div></dl><p class="note"><strong>Ограничения публикации</strong>Из-за NDA в кейсе используются обезличенные описания и синтетические данные. Реальные названия, макеты, клиентские витрины, внутренняя документация и детали продуктовой логики не публикуются.</p>
+      <section class="sec" id="rezultat"><h2 class="sec__h">Результат</h2><ul><li>Сформировал единое дизайн-ядро, через которое можно быстрее поддерживать разные клиентские версии продукта.</li><li>Упростил обновление интерфейсов: новые состояния, компоненты и функциональные изменения больше не требуют ручной пересборки каждого макета с нуля.</li><li>Перепроектировал checkout: сократил количество шагов и собрал ключевые действия оформления заказа в более прямой и понятный сценарий.</li></ul></section><section class="sec" id="ishodnaya-situatsiya"><h2 class="sec__h">Исходная ситуация</h2><p>Для каждого ресторана в продукте создаётся клиентская витрина: каталог блюд, сценарий оформления заказа и личный кабинет пользователя. По мере роста продукта поддерживать такие витрины становилось всё сложнее.</p><ul><li>макеты находились в разных разделах, из-за чего было сложнее быстро ориентироваться в структуре;</li><li>кастомизация под бренд клиента требовала ручных правок;</li><li>при появлении нового функционала изменения приходилось повторять в нескольких местах;</li><li>поддержка актуальности макетов занимала всё больше времени по мере роста количества клиентских витрин.</li></ul><p>Продукт масштабировался, а дизайн-инфраструктура уже не соответствовала этому темпу.</p></section><section class="sec" id="struktura-i-dizain-sistema"><h2 class="sec__h">Структура и дизайн-система</h2><p>Первым этапом стала систематизация макетов. Я сгруппировал интерфейсы вокруг трёх ключевых пользовательских зон: каталог и листинг, оформление заказа, личный кабинет.</p><p>Это помогло отделить базовую продуктовую структуру от клиентских особенностей и упростить навигацию по файлу для дизайна, менеджмента и разработки.</p></section><section class="sec" id="peremennye-i-komponenty"><h2 class="sec__h">Переменные и компоненты</h2><p>В дизайн-ядро вошли цветовые переменные, типографика, размеры и отступы, базовые UI-компоненты, состояния элементов и компоненты для повторяющихся экранов и сценариев.</p><p>Компоненты были завязаны на переменные, чтобы клиентская кастомизация не требовала пересборки интерфейса вручную. Это позволило быстрее адаптировать витрины под разные бренды и централизованно поддерживать изменения в продукте.</p></section><section class="sec" id="logika-sistemy"><h2 class="sec__h">Логика системы</h2><p>Работа не ограничивалась визуальной частью. Важно было продумать, как дизайн-система будет жить в реальном продукте:</p><ul><li>какие элементы должны быть общими для всех витрин;</li><li>какие параметры могут меняться под конкретного клиента;</li><li>как обновлять продуктовые сценарии без хаоса в макетах;</li><li>как сохранить единый пользовательский опыт при разных визуальных настройках.</li></ul></section><section class="sec" id="pereproektirovanie-checkout"><h2 class="sec__h">Перепроектирование checkout</h2><div class="ba"><div><h3>Было</h3><ul><li>многоступенчатый поток оформления;</li><li>отдельная корзина как промежуточный этап;</li><li>несколько последовательных экранов перед оплатой;</li><li>повторный ввод данных в сценариях, где часть информации уже могла быть известна системе.</li></ul></div><div><h3>Стало</h3><ul><li>единый экран оформления заказа;</li><li>корзина, данные доставки и основные действия собраны в одном сценарии;</li><li>для авторизованных пользователей часть данных может подставляться автоматически;</li><li>переход к оплате происходит без лишних промежуточных шагов.</li></ul></div></div><p>Checkout стал более прямым: пользователь видит состав заказа, проверяет данные, уточняет условия доставки и переходит к оплате без лишних переключений между экранами.</p></section><section class="sec" id="effekt"><h2 class="sec__h">Эффект</h2><ul><li>Поддержка макетов стала проще за счёт единого дизайн-ядра, а клиентская кастомизация — быстрее и предсказуемее.</li><li>Новые компоненты и состояния можно внедрять централизованно.</li><li>Подключение новых клиентов стало проще за счёт переиспользования компонентов и переменных.</li><li>Checkout стал короче и понятнее для конечного пользователя, а повторные заказы — удобнее.</li><li>Фокус команды сместился с ручной пересборки отдельных витрин на развитие общего продуктового ядра.</li></ul></section>
+    </div>
+  </div>
+
+  <section class="more" aria-label="Другие кейсы"><h2 class="h2">Другие кейсы</h2><ul class="more__grid"><li><a class="card" href="sales-crm.html"><span class="card__media"><img src="../../assets/cases/crm_pc.webp" data-remote="https://keprah.github.io/portfolio/assets/img/crm_pc.webp" width="1500" height="723" alt="Экраны CRM для отдела продаж" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">CRM для отдела продаж</span><span class="card__text">Внутренний сервис отдела продаж: от первого обращения до офферов и финансовых расчётов.</span></span></a></li><li><a class="card" href="financial-dashboard.html"><span class="card__media"><img src="../../assets/cases/fin_main.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_main.webp" width="1500" height="877" alt="Финансовый дашборд" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">Финансовый дашборд</span><span class="card__text">Сервис финансового мониторинга: план и факт, периоды и версии данных в одном интерфейсе.</span></span></a></li></ul></section>
+
+  <!-- ============ About me ============ -->
+  <section class="about" id="contacts">
+    <h2 class="h2">Обо мне</h2>
+    <p class="about__loc">
+      <svg width="16" height="20" viewBox="0 0 16 20" aria-hidden="true"><path transform="translate(1 0) scale(.875 1)" fill="currentColor" d="M8 0C3.6 0 0 3.5 0 7.9c0 5.4 6.4 11.4 7.2 12 .5.4 1.1.4 1.6 0C9.6 19.3 16 13.3 16 7.9 16 3.5 12.4 0 8 0zm0 11a3.1 3.1 0 110-6.2A3.1 3.1 0 018 11z"/></svg>
+      Тбилиси, Грузия
+    </p>
+    <p class="about__text">Меня зовут Илья. Я продуктовый<br class="br-m"> дизайнер, специализируюсь<br class="br-t"> на<br class="br-m"> корпоративных<br class="br-d"> системах (B2E/B2B)<br class="br-m"> и занимаюсь UX-<br class="br-t">дизайном сложных<br class="br-m"> интерфейсов с большим объёмом<br class="br-d br-m"> данных,<br class="br-t"> фильтрами, формами<br class="br-m"> и ролевыми моделями — интерфейсов,<br class="br-t br-m"> которые помогают<br class="br-d"> сотрудникам<br class="br-m"> работать быстрее и<br class="br-t"> ошибаться реже.</p>
+
+    <h3 class="about__h3">Контакты</h3>
+    <a class="mail" href="mailto:lifespacezero@gmail.com">
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>
+      lifespacezero@gmail.com
+    </a>
+    <div class="links">
+      <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <span>© 2026</span>
+    <span class="lang"><a href="../../cases/design-system.html" lang="en" hreflang="en">EN</a> / <a href="../../ru/cases/design-system.html" lang="ru" hreflang="ru" aria-current="true">RU</a></span>
+  </div>
+</footer>
+
+<dialog class="modal" id="contact-modal" aria-labelledby="contact-title">
+  <button class="modal__close" type="button" data-modal-close aria-label="Закрыть"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M.75.75l12.5 12.5M13.25.75L.75 13.25"/></svg></button>
+  <h2 class="modal__title" id="contact-title">Контакты</h2>
+  <a class="mail" href="mailto:lifespacezero@gmail.com"><svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>lifespacezero@gmail.com</a>
+  <div class="links">
+    <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+  </div>
+  <a class="modal__cta" href="https://calendly.com/lifespacezero/30min" target="_blank" rel="noopener">Записаться на звонок</a>
+</dialog>
+
+</body>
+</html>

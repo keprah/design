@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial dashboard for a real estate developer · Ilya Andreev</title>
+<meta name="description" content="Designed an internal financial monitoring tool for a real estate development project, bringing planned and actual figures, periods, filters and data versions into one consistent interface.">
+<link rel="preload" href="../fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../case.css">
+<script src="../site.js"></script>
+<script src="../case.js"></script>
+</head>
+<body class="case-page">
+
+<header class="header">
+  <div class="header__in">
+    <a class="brand" href="../index.html" aria-label="Ilya Andreev — home">
+      <span class="avatar" aria-hidden="true">IA<i class="avatar__dot"></i></span>
+      <span class="brand__name">Ilya Andreev</span>
+    </a>
+    <div class="header__actions">
+      <a class="btn" href="#contacts" data-contact>Get in touch</a>
+      <div class="langmenu">
+        <button class="flag" type="button" aria-label="Language: English" aria-haspopup="true" aria-expanded="false" aria-controls="langpop"><img src="../assets/flag-gb.png" width="20" height="20" alt=""></button>
+        <div class="langpop" id="langpop" hidden>
+          <a href="../cases/financial-dashboard.html" lang="en" hreflang="en" aria-current="true"><img src="../assets/flag-gb.png" width="20" height="20" alt="">English</a>
+          <a href="../ru/cases/financial-dashboard.html" lang="ru" hreflang="ru"><img src="../assets/flag-ru.png" width="20" height="20" alt="">Русский</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <header class="case-head">
+    <h1 class="case-title">Financial dashboard</h1>
+    <p class="case-lead">Designed an internal financial monitoring tool for a real estate development project, bringing planned and actual figures, periods, filters and data versions into one consistent interface.</p>
+  </header>
+
+  <figure class="case-hero" style="--ar:1500/877">
+    <div class="case-hero__frame"><img src="../assets/cases/fin_main.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_main.webp" width="1500" height="877" alt="Financial monitoring dashboard: revenue, expenses, share of advertising spend and monthly trends" fetchpriority="high"></div>
+    <figcaption>Financial monitoring dashboard: revenue, expenses, share of advertising spend and monthly trends</figcaption>
+  </figure>
+
+  <div class="case-body">
+    <nav class="case-nav" aria-label="Case sections"><ul><li><a href="#outcome">Outcome</a></li><li><a href="#about-the-project">About the project</a></li><li><a href="#key-ux-challenge-plan-versions">Key UX challenge: plan versions</a></li><li><a href="#what-mattered">What mattered</a></li><li><a href="#prototype">Prototype</a></li><li><a href="#process">Process</a></li></ul></nav>
+    <div class="case-content">
+      <dl class="facts"><div class="facts__row"><dt>Type</dt><dd>Analytics · Internal tool</dd></div><div class="facts__row"><dt>Role</dt><dd>UX/UI design: section structure, dashboard and table logic, interactive prototypes, developer handoff</dd></div><div class="facts__row"><dt>Users</dt><dd>Finance specialists, department heads, management reporting users</dd></div><div class="facts__row"><dt>How we worked</dt><dd>Interactive prototypes shown at client meetings, then shared for internal testing</dd></div></dl><p class="note"><strong>Confidentiality</strong>Due to an NDA, this case uses anonymized descriptions and synthetic data. Real names, financial figures, internal data sources, mockups and client-specific logic are not published.</p>
+      <section class="sec" id="outcome"><h2 class="sec__h">Outcome</h2><ul><li>Made financial metrics easier to analyze through a clear structure of dashboards, tables and comparison scenarios.</li><li>Delivered an interface that works both for detailed analysis and for presenting aggregated results to leadership.</li></ul></section><section class="sec" id="about-the-project"><h2 class="sec__h">About the project</h2><p>I designed the financial monitoring section of a management panel for a real estate development project. The tool had to help the finance team work with a large set of metrics, compare planned and actual values, analyze variances and switch quickly between different data slices.</p><p>The interface’s main job was to make complex financial reporting clear, manageable and suitable for everyday use.</p><figure class="fig" style="--ar:1500/877"><div class="fig__frame"><img src="../assets/cases/fin_sales.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_sales.webp" width="1500" height="877" alt="Sales table: plan vs. actual by project, variances and conversion rates" loading="lazy" decoding="async"></div><figcaption>Sales table: plan vs. actual by project, variances and conversion rates</figcaption></figure></section><section class="sec" id="key-ux-challenge-plan-versions"><h2 class="sec__h">Key UX challenge: plan versions</h2><p>In financial reporting, planned values can be updated, recalculated and used in different analysis scenarios. Users need to know which version of the plan they are comparing actuals against, and to switch between versions quickly.</p><p>I designed the version selection logic, the active-state display and the comparison scenarios so that this complexity stays manageable.</p><figure class="fig" style="--ar:1500/877"><div class="fig__frame"><img src="../assets/cases/fin_plan.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_plan.webp" width="1500" height="877" alt="Table mode for working with planned figures" loading="lazy" decoding="async"></div><figcaption>Table mode for working with planned figures</figcaption></figure></section><section class="sec" id="what-mattered"><h2 class="sec__h">What mattered</h2><ul><li>Separate a quick overview from deep analysis.</li><li>Make the metric structure clear without overloading the screen.</li><li>Design filters, toggles and states for different comparison scenarios.</li><li>Present variances in a form that is easy to analyze.</li><li>Keep interaction patterns consistent across dashboards and tables.</li><li>Prepare the interface for large volumes of data.</li></ul><figure class="fig" style="--ar:1000/562"><div class="fig__frame"><img src="../assets/cases/fin_anim.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_anim.webp" width="1000" height="562" alt="Interactive prototype: switching data slices and comparing metrics" loading="lazy" decoding="async"></div><figcaption>Interactive prototype: switching data slices and comparing metrics</figcaption></figure></section><section class="sec" id="prototype"><h2 class="sec__h">Prototype</h2><p>I presented all work at client meetings as interactive prototypes, then shared the links so the team and the client’s staff could test them internally.</p><div class="slider" data-slider style="--ar:1500/895" role="group" aria-roledescription="carousel" aria-label="Prototype"><div class="slider__track" tabindex="0"><figure class="slide"><div class="slide__frame"><img src="../assets/cases/fin_proto.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_proto.webp" width="1500" height="895" alt="Prototype map: connections between screens and states" loading="lazy" decoding="async"></div><figcaption>Prototype map: connections between screens and states</figcaption></figure><figure class="slide"><div class="slide__frame"><img src="../assets/cases/fin_wire.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_wire.webp" width="1500" height="382" alt="Early wireframes of the report structure" loading="lazy" decoding="async"></div><figcaption>Early wireframes of the report structure</figcaption></figure></div><div class="slider__ctrl"><div class="slider__bars"><button type="button" aria-label="Slide 1" aria-current="true"></button><button type="button" aria-label="Slide 2" aria-current="false"></button></div><div class="slider__arrows"><button class="arrow" type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 5 8.5 12l7 7"/></svg></button><button class="arrow" type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 5l7 7-7 7"/></svg></button></div></div></div></section><section class="sec" id="process"><h2 class="sec__h">Process</h2><ul><li>Analyzed requirements and financial reporting workflows.</li><li>Structured metrics, slices, filters and comparison options.</li><li>Designed the logic of dashboards, tables and detail views.</li><li>Worked out scenarios for selecting planned data versions.</li><li>Built interactive prototypes to validate the interface logic.</li><li>Refined the screen structure based on team discussions.</li><li>Prepared mockups and interface states for developer handoff.</li></ul><figure class="fig" style="--ar:1500/723"><div class="fig__frame"><img src="../assets/cases/fin_layout.webp" data-remote="https://keprah.github.io/portfolio/assets/img/fin_layout.webp" width="1500" height="723" alt="Dashboard block layout" loading="lazy" decoding="async"></div><figcaption>Dashboard block layout</figcaption></figure></section>
+    </div>
+  </div>
+
+  <section class="more" aria-label="Other cases"><h2 class="h2">Other cases</h2><ul class="more__grid"><li><a class="card" href="design-system.html"><span class="card__media"><img src="../assets/cases/ds_vars.webp" data-remote="https://keprah.github.io/portfolio/assets/img/ds_vars.webp" width="1500" height="828" alt="Design system variables and components" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">Design system</span><span class="card__text">Migrated SaaS delivery storefronts to components and variables.</span></span></a></li><li><a class="card" href="sales-crm.html"><span class="card__media"><img src="../assets/cases/crm_pc.webp" data-remote="https://keprah.github.io/portfolio/assets/img/crm_pc.webp" width="1500" height="723" alt="Sales CRM screens" loading="lazy" decoding="async"></span><span class="card__body"><span class="card__title">Sales CRM</span><span class="card__text">Internal sales tool from lead intake to offers and financial calculations.</span></span></a></li></ul></section>
+
+  <!-- ============ About me ============ -->
+  <section class="about" id="contacts">
+    <h2 class="h2">About me</h2>
+    <p class="about__loc">
+      <svg width="16" height="20" viewBox="0 0 16 20" aria-hidden="true"><path transform="translate(1 0) scale(.875 1)" fill="currentColor" d="M8 0C3.6 0 0 3.5 0 7.9c0 5.4 6.4 11.4 7.2 12 .5.4 1.1.4 1.6 0C9.6 19.3 16 13.3 16 7.9 16 3.5 12.4 0 8 0zm0 11a3.1 3.1 0 110-6.2A3.1 3.1 0 018 11z"/></svg>
+      Tbilisi, Georgia
+    </p>
+    <p class="about__text">My name is Ilya. I'm a product designer specializing in enterprise systems (B2E/B2B)<br class="br-d"> and focused on UX design for complex interfaces with large amounts of data,<br class="br-d"> filters, forms, and role-based models—interfaces that help employees<br class="br-d"> work faster and make fewer mistakes.</p>
+
+    <h3 class="about__h3">Contacts</h3>
+    <a class="mail" href="mailto:lifespacezero@gmail.com">
+      <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>
+      lifespacezero@gmail.com
+    </a>
+    <div class="links">
+      <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <span>© 2026</span>
+    <span class="lang"><a href="../cases/financial-dashboard.html" lang="en" hreflang="en" aria-current="true">EN</a> / <a href="../ru/cases/financial-dashboard.html" lang="ru" hreflang="ru">RU</a></span>
+  </div>
+</footer>
+
+<dialog class="modal" id="contact-modal" aria-labelledby="contact-title">
+  <button class="modal__close" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M.75.75l12.5 12.5M13.25.75L.75 13.25"/></svg></button>
+  <h2 class="modal__title" id="contact-title">Contacts</h2>
+  <a class="mail" href="mailto:lifespacezero@gmail.com"><svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true"><path fill="currentColor" d="M2 0h16a2 2 0 012 2v.5l-10 6.4L0 2.5V2a2 2 0 012-2zM0 5l9.5 6a1 1 0 001 0L20 5v9a2 2 0 01-2 2H2a2 2 0 01-2-2z"/></svg>lifespacezero@gmail.com</a>
+  <div class="links">
+    <a class="chip" href="https://t.me/ilya_nwy" target="_blank" rel="noopener"><img src="../assets/icon-telegram.png" width="24" height="24" alt="">Telegram</a>
+      <a class="chip" href="https://www.linkedin.com/in/ilya-andreev-232864255" target="_blank" rel="noopener"><img src="../assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>
+  </div>
+  <a class="modal__cta" href="https://calendly.com/lifespacezero/30min" target="_blank" rel="noopener">Book a call</a>
+</dialog>
+
+</body>
+</html>
