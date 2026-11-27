@@ -48,7 +48,7 @@ T = {
         story_aria="Recommendation", story_name="Roman Runzhin", story_role="CDTO at Keep Calm",
         story_quote='You can count on Ilya. He has a deep understanding<br class="br-d"> of the tasks at hand, works independently, and<br class="br-d"> consistently delivers high-quality results.',
         work_h="Work experience",
-        work_sub='<span class="hl">Over 5 years</span> I translate vague business requirements into clear UX scenarios<br class="br-d"> and functional interface solutions',
+        work_sub='<span class="hl">Over 5 years</span> I translate business requirements into clear UX scenarios<br class="br-d"> and functional interface solutions',
         cv="Download CV (pdf)",
         jobs=[("Product / DS Designer", "2024–2026", "Keep Calm Agency",
                "Designed marketplaces, CRMs and dashboards for real estate, restaurants and construction,<br class=\"br-d\"> and led the design system in Figma."),
@@ -60,7 +60,7 @@ T = {
                "Designed websites and online stores<br class=\"br-d\"> for the studio's clients: from structure<br class=\"br-d\"> and prototypes to responsive layouts.")],
         remote="Remote",
         about_h="About me", loc="Tbilisi, Georgia",
-        about_text='My name is Ilya. I\'m a product designer specializing in enterprise systems (B2E/B2B)<br class="br-d"> and focused on UX design for complex interfaces with large amounts of data,<br class="br-d"> filters, forms, and role-based models—interfaces that help employees<br class="br-d"> work faster and make fewer mistakes.',
+        about_text='My name is Ilya. I\'m a product designer specializing in enterprise systems (B2E/B2B)<br class="br-d"> and designing complex interfaces<br class="br-d"> that help employees work faster and make fewer mistakes.',
         contacts="Contacts", book="Book a call", close="Close",
         more="Other cases", type="Type", website="Website", nda="Confidentiality",
         before="Before", after="After", nav_aria="Case sections", prev="Previous slide", next="Next slide", slide="Slide",
@@ -78,19 +78,19 @@ T = {
         story_aria="Рекомендация", story_name="Роман Рунжин", story_role="CDTO в Keep Calm",
         story_quote='На Илью можно положиться.<br class="br-m"> Он глубоко<br class="br-t"> разбирается<br class="br-d"> в задачах,<br class="br-m"> работает<br class="br-t"> самостоятельно<br class="br-m"> и стабильно выдаёт<br class="br-d br-t"> качественный<br class="br-m"> результат.',
         work_h="Опыт работы",
-        work_sub='<span class="hl">Более 5 лет</span> перевожу расплывчатые<br class="br-m"> бизнес-требования<br class="br-t"> в понятные<br class="br-d br-m"> UX-сценарии и работающие<br class="br-t br-m"> интерфейсные решения',
+        work_sub='<span class="hl">Более 5 лет</span> перевожу бизнес-требования<br class="br-t br-m"> в понятные<br class="br-d"> UX-сценарии и работающие<br class="br-t br-m"> интерфейсные решения',
         cv="Скачать резюме (pdf)",
         jobs=[("Product / DS Designer", "2024–2026", "Keep Calm Agency",
-               "Проектировал маркетплейсы, CRM,<br class=\"br-m\"> дашборды<br class=\"br-d br-t\"> для недвижимости,<br class=\"br-m\"> ресторанов и<br class=\"br-d br-t\"> строительства, вёл<br class=\"br-m\"> дизайн-систему на Figma."),
+               "Проектировал маркетплейсы, CRM,<br class=\"br-m\"> дашборды<br class=\"br-d br-t\"> для недвижимости,<br class=\"br-m\"> ресторанов и<br class=\"br-d br-t\"> строительства,<br class=\"br-m\"> вёл дизайн-систему на Figma."),
               ("Product Designer", "2023–2024", "Serenity Studio",
                "Проектировал веб-сайты и интернет-<br class=\"br-d br-t br-m\">магазины для заказчиков:<br class=\"br-m\"> информационная<br class=\"br-d br-t\"> архитектура,<br class=\"br-m\"> интерактивные прототипы."),
               ("Product Designer", "2022–2024", "Schneider Consult",
                "Улучшал UX e-commerce розничной<br class=\"br-m\"> компании:<br class=\"br-d br-t\"> искал барьеры конверсии<br class=\"br-m\"> и развивал дизайн-<br class=\"br-d br-t\">систему клиента."),
               ("UX/UI Designer", "2021–2022", "Mage Studio",
-               "Проектировал сайты и интернет-<br class=\"br-m\">магазины<br class=\"br-d br-t\"> для клиентов студии: от<br class=\"br-m\"> структуры<br class=\"br-d br-t br-m\"> и прототипов до адаптивных макетов.")],
+               "Проектировал сайты и интернет-<br class=\"br-m\">магазины<br class=\"br-d br-t\"> для клиентов студии:<br class=\"br-m\"> от структуры<br class=\"br-d br-t\"> и прототипов<br class=\"br-m\"> до адаптивных макетов.")],
         remote="Удаленно",
         about_h="Обо мне", loc="Тбилиси, Грузия",
-        about_text='Меня зовут Илья. Я продуктовый<br class="br-m"> дизайнер, специализируюсь<br class="br-t"> на<br class="br-m"> корпоративных<br class="br-d"> системах (B2E/B2B)<br class="br-m"> и занимаюсь UX-<br class="br-t">дизайном сложных<br class="br-m"> интерфейсов с большим объёмом<br class="br-d br-m"> данных,<br class="br-t"> фильтрами, формами<br class="br-m"> и ролевыми моделями — интерфейсов,<br class="br-t br-m"> которые помогают<br class="br-d"> сотрудникам<br class="br-m"> работать быстрее и<br class="br-t"> ошибаться реже.',
+        about_text='Меня зовут Илья. Я продуктовый дизайнер,<br class="br-m"> специализируюсь<br class="br-t"> на корпоративных<br class="br-d br-m"> системах (B2E/B2B) и занимаюсь<br class="br-t br-m"> проектированием сложных интерфейсов,<br class="br-m"> которые помогают<br class="br-d br-t"> сотрудникам работать<br class="br-m"> быстрее и ошибаться реже.',
         contacts="Контакты", book="Записаться на звонок", close="Закрыть",
         more="Другие кейсы", type="Тип", website="Сайт", nda="Ограничения публикации",
         before="Было", after="Стало", nav_aria="Разделы кейса", prev="Предыдущий слайд", next="Следующий слайд", slide="Слайд",
@@ -243,6 +243,9 @@ def head_html(L, kind, title, desc, p):
                       for f in (["geist-cyrillic-400-normal", "geist-latin-400-normal", "geist-cyrillic-500-normal", "geist-latin-500-normal",
                                  "playfair-display-cyrillic-400-normal", "playfair-display-latin-400-normal"] if ru else
                                 ["geist-latin-400-normal", "geist-latin-500-normal", "playfair-display-latin-400-normal"]))
+    if kind != "case":  # Geist Light (300) нужен только главной
+        preload += "".join(f'<link rel="preload" href="{p}fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>\n'
+                           for f in (["geist-cyrillic-300-normal", "geist-latin-300-normal"] if ru else ["geist-latin-300-normal"]))
     case_css = f'<link rel="stylesheet" href="{p}case.css">\n' if kind == "case" else ""
     case_js = f'<script src="{p}case.js"></script>\n' if kind == "case" else ""
     return f"""<!DOCTYPE html>
@@ -296,7 +299,18 @@ def chips_html(p):
             f'      <a class="chip" href="{LINKEDIN}" target="_blank" rel="noopener"><img src="{p}assets/icon-linkedin.png" width="24" height="24" alt="">LinkedIn</a>')
 
 
-def about_html(L, p):
+def strip_br(text, drop=("br-t", "br-m")):
+    """убирает из текста ручные переносы для указанных диапазонов (остальные остаются)"""
+    def f(m):
+        cls = [c for c in m.group(1).split() if c not in drop]
+        return f'<br class="{" ".join(cls)}">' if cls else ""
+    return re.sub(r'<br class="([^"]*)">', f, text)
+
+
+def about_html(L, p, kind="home"):
+    # переносы br-t / br-m сняты с макетов главной (текст 15 px, Light); на страницах кейсов у блока другой кегль —
+    # там на планшете и мобильном текст переносится сам
+    text = strip_br(L["about_text"]) if kind == "case" else L["about_text"]
     return f"""
   <!-- ============ About me ============ -->
   <section class="about" id="contacts">
@@ -305,7 +319,7 @@ def about_html(L, p):
       {PIN_SVG}
       {esc(L["loc"])}
     </p>
-    <p class="about__text">{L["about_text"]}</p>
+    <p class="about__text">{text}</p>
 
     <h3 class="about__h3">{esc(L["contacts"])}</h3>
     <a class="mail" href="mailto:{EMAIL}">
@@ -349,7 +363,7 @@ def footer_html(L, kind, slug):
 
 
 def tail_html(L, kind, slug, p):
-    return about_html(L, p) + "\n</main>\n" + footer_html(L, kind, slug) + modal_html(L, p) + "\n</body>\n</html>\n"
+    return about_html(L, p, kind) + "\n</main>\n" + footer_html(L, kind, slug) + modal_html(L, p) + "\n</body>\n</html>\n"
 
 
 # ---------------------------------------------------------------------------------------------
@@ -358,7 +372,7 @@ def tail_html(L, kind, slug, p):
 # ручные переносы в текстах карточек главной: ≥1232 (Home_1440) · 600–959 (Home_768) · 385–480 (Home_390)
 CARD_BR = {
     "ru": {"crm": 'Внутренний сервис отдела продаж:<br class="br-w br-m"> от первого обращения<br class="br-t"> до офферов<br class="br-w br-m"> и финансовых расчётов.',
-           "dashboard": 'Сервис финансового мониторинга:<br class="br-w br-m"> план и факт, периоды<br class="br-t"> и версии<br class="br-m"> данных<br class="br-w"> в одном интерфейсе.',
+           "dashboard": 'Сервис финансового мониторинга:<br class="br-w br-m"> план и факт, периоды<br class="br-t"> и версии данных<br class="br-w br-m"> в одном интерфейсе.',
            "design-system": 'Перевод клиентских витрин SaaS-<br class="br-m">платформы<br class="br-w"> доставки<br class="br-t"> на компоненты<br class="br-m"> и переменные.'},
 }
 
