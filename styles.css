@@ -6,6 +6,8 @@
    ========================================================================== */
 
 /* Шрифты (самохостинг, woff2): Geist — интерфейс и текст, Playfair Display — заголовки. У обоих есть и латиница, и кириллица. */
+@font-face{font-family:"Geist";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/geist-cyrillic-300-normal.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Geist";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/geist-latin-300-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Geist";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/geist-cyrillic-400-normal.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:"Geist";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/geist-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Geist";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/geist-cyrillic-500-normal.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -55,6 +57,22 @@
   --fs-home-title:clamp(17px,calc(17px + (100vw - 390px) * .01058),21px);   /* 17 → 21: карточки, имя, должности */
   --fs-home-status:clamp(13px,calc(13px + (100vw - 390px) * .00529),15px);  /* 13 → 15 */
   --fs-home-jobmeta:clamp(13px,calc(13px + (100vw - 390px) * .00265),14px); /* 13 → 14 */
+  --fs-home-text:clamp(15px,calc(15px + (100vw - 390px) * .00529),17px);    /* 15 → 17: кнопка, роль, подзаголовок, CV, «Обо мне», почта, чипы */
+  --fs-home-name:clamp(15px,calc(15px + (100vw - 390px) * .01587),21px);    /* 15 → 21: имя автора рекомендации */
+  /* ls:begin */
+  --ls-status:clamp(0.098px,calc(0.098px + (100vw - 390px) * 0.000492),0.283px);
+  --ls-card:clamp(0.000px,calc(0.000px + (100vw - 390px) * 0.000321),0.121px);
+  --ls-role:clamp(0.114px,calc(0.114px + (100vw - 390px) * 0.000476),0.294px);
+  --ls-sub:clamp(0.154px,calc(0.154px + (100vw - 390px) * 0.000662),0.405px);
+  --ls-cv:clamp(0.272px,calc(0.312px + (100vw - 390px) * -0.000106),0.312px);
+  --ls-meta:clamp(0.226px,calc(0.226px + (100vw - 390px) * 0.000161),0.287px);
+  --ls-jtext:clamp(0.052px,calc(0.052px + (100vw - 390px) * 0.000425),0.213px);
+  --ls-about:clamp(0.060px,calc(0.060px + (100vw - 390px) * 0.000934),0.413px);
+  --ls-mail:clamp(0.188px,calc(0.188px + (100vw - 390px) * 0.000462),0.362px);
+  --ls-chip:clamp(0.210px,calc(0.210px + (100vw - 390px) * 0.000074),0.238px);
+  
+  /* ls:end */
+  --fw-light:300;                                                          /* Geist Light: статус, тексты карточек, опыта, «Обо мне», почта */
 
   /* layout */
   --page-max:1184px;
@@ -131,11 +149,11 @@ body.is-modal{overflow:hidden}
    Hero
    ========================================================================== */
 .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:var(--gap-hero-top) var(--pad) 0}
-.status{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 13px 0 9px;border:1px solid var(--line);border-radius:999px;font-size:var(--fs-home-status);line-height:20px;letter-spacing:.01em;color:var(--ink-3)}
+.status{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 13px 0 9px;border:1px solid var(--line);border-radius:999px;font-size:var(--fs-home-status);line-height:20px;font-weight:var(--fw-light);letter-spacing:var(--ls-status);color:var(--ink-3)}
 .status__dot{width:16px;height:16px;border-radius:50%;background:var(--green)}
 .hero__title{margin-top:calc(16px - var(--fs-home-h1)*.05);font-family:var(--ff-display);font-weight:400;font-size:var(--fs-home-h1);line-height:1.1;letter-spacing:-.02em}
-.hero__sub{margin-top:calc(22px - var(--fs-home-h1)*.05);font-size:var(--fs-home-sub);line-height:1.3158;letter-spacing:-.006em;font-weight:400;color:var(--ink-2);text-wrap:balance}
-.hero .btn{margin-top:32px}
+.hero__sub{margin-top:calc(22px - var(--fs-home-h1)*.05);font-size:var(--fs-home-sub);line-height:1.3158;letter-spacing:-.006em;font-weight:400;color:var(--ink-2)}
+.hero .btn{margin-top:32px;font-size:var(--fs-home-text)}
 
 /* ==========================================================================
    Cases
@@ -154,16 +172,16 @@ body.is-modal{overflow:hidden}
 .card__body{display:block;padding:21px 12px 12px}
 .card__title{display:block;margin-bottom:9px;font-size:var(--fs-home-title);line-height:28px;font-weight:500}
 .card__text{display:block;font-size:var(--fs-small);line-height:20px;color:var(--text-soft)}
+body:not(.case-page) .card__text{font-weight:var(--fw-light);letter-spacing:var(--ls-card)}
 
 /* ==========================================================================
    Story / recommendation
    ========================================================================== */
 .story{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:var(--gap-xl);padding-inline:var(--pad)}
 .story__avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;background:var(--avatar-bg)}
-.story__name{margin-top:33px;font-size:var(--fs-home-title);line-height:28px;font-weight:500}
-.story__role{margin-top:7px;letter-spacing:.012em;color:var(--muted)}
+.story__name{margin-top:33px;font-size:var(--fs-home-name);line-height:28px;font-weight:500}
+.story__role{margin-top:7px;font-size:var(--fs-home-text);font-weight:var(--fw-light);letter-spacing:var(--ls-role);color:var(--muted)}
 .story__quote{margin-top:24px;max-width:720px;font-size:var(--fs-home-quote);line-height:1.28;letter-spacing:.007em}
-.story__quote p{text-wrap:balance}
 .dots{display:flex;align-items:center;gap:5px;margin-top:64px}
 .dots i{display:block;width:8px;height:4px;border-radius:2px;background:var(--dot)}
 .dots i.is-active{width:15px;background:#000}
@@ -173,10 +191,10 @@ body.is-modal{overflow:hidden}
    ========================================================================== */
 .work{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:var(--gap-xl);padding-inline:var(--pad)}
 .h2{font-family:var(--ff-display);font-weight:400;font-size:var(--fs-home-h2);line-height:1.375;letter-spacing:-.01em;text-wrap:balance}
-.work__sub{margin-top:25px;letter-spacing:.016em;color:var(--ink-2)}
+.work__sub{margin-top:25px;font-size:var(--fs-home-text);font-weight:var(--fw-light);letter-spacing:var(--ls-sub);color:var(--ink-2)}
 .hl{position:relative;z-index:0;font-weight:500;color:#2a2832}
 .hl::before{content:"";position:absolute;z-index:-1;left:-20px;right:-5px;top:2px;height:24px;background:url("assets/highlight.png") center/100% 100% no-repeat}
-.cv{display:inline-flex;align-items:center;gap:15px;letter-spacing:.016em;height:51px;margin-top:30px;padding:0 20px 0 19px;border-radius:4px;background:var(--fill-soft);color:var(--ink-3);transition:background .15s}
+.cv{display:inline-flex;align-items:center;gap:15px;font-size:var(--fs-home-text);letter-spacing:var(--ls-cv);height:51px;margin-top:30px;padding:0 20px 0 19px;border-radius:4px;background:var(--fill-soft);color:var(--ink-3);transition:background .15s}
 .cv:hover{background:#f0f0f0}
 .cv img{width:auto;height:24px}
 
@@ -186,9 +204,9 @@ body.is-modal{overflow:hidden}
 .job__dot{width:16px;height:16px;margin-top:7px;border-radius:50%;background:var(--lavender)}
 .job:not(:last-child)::before{content:"";position:absolute;left:6px;top:45.3px;width:4px;height:calc(100% - 60.5px);background:radial-gradient(circle at 2px 2px,var(--lavender) 1.9px,transparent 2.3px) 0 0/4px 20.4px repeat-y}
 .job__role{font-size:var(--fs-home-title);line-height:28px;font-weight:500}
-.job__meta{display:flex;flex-wrap:wrap;column-gap:8px;margin-top:6px;font-size:var(--fs-home-jobmeta);line-height:20px;letter-spacing:.013em;color:var(--muted)}
+.job__meta{display:flex;flex-wrap:wrap;column-gap:8px;margin-top:6px;font-size:var(--fs-home-jobmeta);line-height:20px;font-weight:var(--fw-light);letter-spacing:var(--ls-meta);color:var(--muted)}
 .job__meta i{font-style:normal}
-.job__text{margin-top:12px;margin-right:-16px;font-size:var(--fs-small);line-height:20px;letter-spacing:.006em;color:var(--text-soft)}
+.job__text{margin-top:12px;margin-right:-16px;font-size:var(--fs-small);line-height:20px;font-weight:var(--fw-light);letter-spacing:var(--ls-jtext);color:var(--text-soft)}
 
 /* ==========================================================================
    About me
@@ -197,14 +215,17 @@ body.is-modal{overflow:hidden}
 .about__loc{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:16px;padding-left:3px}
 .about__loc svg{flex:none;color:var(--muted)}
 .about__text{margin-top:24px;letter-spacing:.016em;color:var(--ink-2)}
+body:not(.case-page) .about__text{font-size:var(--fs-home-text);font-weight:var(--fw-light);letter-spacing:var(--ls-about)}
 .about__h3{margin-top:48px;font-size:var(--fs-h3);line-height:32px;font-weight:500}
 .mail{display:inline-flex;align-items:center;gap:10px;margin-top:17px;letter-spacing:.014em;padding-left:2px;transition:color .15s}
 .mail:hover{color:var(--link)}
+body:not(.case-page) .about .mail{font-size:var(--fs-home-text);font-weight:var(--fw-light);letter-spacing:var(--ls-mail)}
 .mail svg{flex:none;color:var(--muted);transform:translateY(-1px)}
 .links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:31px}
 .chip{display:inline-flex;align-items:center;gap:12px;letter-spacing:.014em;height:51px;padding:0 20px 0 16px;border-radius:4px;background:var(--fill-soft);color:var(--ink-3);transition:background .15s}
 .chip:hover{background:#f0f0f0}
 .chip img{width:24px;height:24px}
+body:not(.case-page) .about .chip{font-size:var(--fs-home-text);letter-spacing:var(--ls-chip)}
 
 /* ==========================================================================
    Footer (60)
@@ -247,8 +268,8 @@ br.br-d,br.br-w,br.br-t,br.br-m{display:none}
   .hero{padding-top:clamp(119px,calc(119px + (100vw - 390px) * 0.21164),199px)}
   .status{height:40px;padding:0 14px 0 9px}
   .hero__title{margin-top:calc(clamp(15px,calc(23px + (100vw - 390px) * -0.02116),23px) - var(--fs-home-h1)*.05)}
-  .hero__sub{margin-top:calc(clamp(22px,calc(26px + (100vw - 390px) * -0.01058),26px) - var(--fs-home-h1)*.05)}
-  .hero .btn{margin-top:clamp(32px,calc(40px + (100vw - 390px) * -0.02116),40px)}
+  .hero__sub{margin-top:calc(clamp(22px,calc(26px + (100vw - 390px) * -0.01058),26px) - var(--fs-home-h1)*.05);line-height:clamp(21px,calc(21px + (100vw - 390px) * .01058),25px)}
+  .hero .btn{margin-top:clamp(32px,calc(39px + (100vw - 390px) * -0.01852),39px)}
 
   .cases{width:min(500px,calc(100% - 64px));margin-top:clamp(96px,calc(96px + (100vw - 390px) * 0.1164),140px)}
   .cases__grid{grid-template-columns:minmax(0,1fr);max-width:none;margin-inline:0;gap:16px}
@@ -260,27 +281,22 @@ br.br-d,br.br-w,br.br-t,br.br-m{display:none}
   .story{margin-top:clamp(100px,calc(100px + (100vw - 390px) * 0.21164),180px)}
   .story__avatar{width:clamp(80px,calc(80px + (100vw - 390px) * 0.10582),120px);height:clamp(80px,calc(80px + (100vw - 390px) * 0.10582),120px)}
   .story__name{margin-top:clamp(16px,calc(16px + (100vw - 390px) * 0.04497),33px)}
-  .story__role{margin-top:clamp(3px,calc(3px + (100vw - 390px) * 0.01058),7px)}
-  .story__quote{margin-top:clamp(21px,calc(21px + (100vw - 390px) * 0.00794),24px)}
+  .story__role{margin-top:clamp(-2px,calc(-2px + (100vw - 390px) * 0.02381),7px)}
+  .story__quote{margin-top:clamp(19px,calc(19px + (100vw - 390px) * 0.01323),24px)}
   .dots{margin-top:clamp(47px,calc(47px + (100vw - 390px) * 0.04497),64px)}
-  .story__quote{max-width:560px}
+  .story__quote{max-width:560px;line-height:clamp(22px,calc(22px + (100vw - 390px) * .02646),32px)}
   .work{margin-top:clamp(122px,calc(122px + (100vw - 390px) * 0.15344),180px)}
-  .work__sub{margin-top:22px}
+  .work__sub{margin-top:22px;line-height:clamp(21px,calc(21px + (100vw - 390px) * .00794),24px)}
   .cv{margin-top:32px}
   .work__sub{max-width:560px}
   .timeline{width:372px;max-width:100%;margin-top:41px}
-  .job__text{margin-right:-16px}
+  .job__text{margin-right:-16px;line-height:clamp(20px,calc(21px - (100vw - 390px) * .00265),21px)}
   .job:not(:last-child)::before{top:41.3px;height:calc(100% - 53px)}
   body:not(.case-page) .about{margin-top:clamp(140px,calc(140px + (100vw - 390px) * 0.10847),181px)}
   .about__text{max-width:560px}
+  body:not(.case-page) .about__text{line-height:clamp(21px,calc(21px + (100vw - 390px) * .00794),24px)}
   body:not(.case-page) .footer{margin-top:clamp(80px,calc(80px + (100vw - 390px) * 0.05291),100px)}
   .footer__in{padding-inline:112px}
-}
-
-/* ≤760: ниже — мягкие переносы без balance */
-@media (max-width:760px){
-  .story__quote p{text-wrap:pretty}
-  .about__text{text-wrap:pretty}
 }
 
 /* ---------- Мобильная версия (макет Home_390) ---------- */
@@ -291,8 +307,6 @@ br.br-d,br.br-w,br.br-t,br.br-m{display:none}
   .header__actions{gap:8px}
   .brand{gap:16px}
   .header .btn{padding:0 16px}
-
-  .hero__sub{line-height:19px}
 
   .cases{width:calc(100% - 64px)}
   .cases .card__title{margin-bottom:4px}
@@ -320,3 +334,30 @@ br.br-d,br.br-w,br.br-t,br.br-m{display:none}
   .header__in{justify-content:space-between}
 }
 .nw{white-space:nowrap}
+
+/* ==========================================================================
+   Переносы строк в текстах главной
+   Где ручные переносы (br-m / br-t / br-d / br-w) показаны, строки задаёт разметка, и браузер их не пересчитывает:
+   white-space:nowrap. Иначе Safari (WebKit) с text-wrap:balance/pretty и ручными <br> «досчитывает» перенос
+   по-своему и рвёт строки («Он глубоко разбирается / в задачах,» вместо одной строки).
+   Где ручных переносов нет (<385 и 481–599, у карточек ещё 960–1231), текст переносится сам, а text-wrap:pretty
+   не оставляет одно слово в последней строке.
+   ========================================================================== */
+body:not(.case-page) .card__text,
+body:not(.case-page) :is(.story__quote p,.work__sub,.job__text,.about__text){text-wrap:pretty}
+@media (min-width:960px){
+  body:not(.case-page) :is(.story__quote p,.work__sub,.job__text,.about__text){text-wrap:wrap}   /* EN: переносы только br-d */
+}
+@media (max-width:384px), (min-width:481px) and (max-width:599px), (min-width:960px) and (max-width:1231px){
+  body:not(.case-page) .card__text{text-wrap:balance}   /* без ручных переносов: строки карточки выравниваются по ширине */
+}
+@media (min-width:385px) and (max-width:480px), (min-width:600px){
+  html[lang="ru"] body:not(.case-page) :is(.story__quote p,.work__sub,.job__text,.about__text){white-space:nowrap}
+}
+@media (min-width:385px) and (max-width:480px), (min-width:600px) and (max-width:959px), (min-width:1232px){
+  html[lang="ru"] body:not(.case-page) .card__text{white-space:nowrap}
+}
+
+/* страницы кейсов: блок «Обо мне» с прежним кеглем (17 px), на планшете и мобильном строки выравнивает браузер */
+.case-page .about__text{text-wrap:pretty}
+@media (min-width:960px){.case-page .about__text{text-wrap:wrap}}
